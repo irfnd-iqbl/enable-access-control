@@ -16,7 +16,10 @@ db.createUser(
   {
     user: "irfandi",
     pwd: "userpwd",
-    roles: [{ role: "userAdminAnyDatabase", db: "admin" }]
+    roles: [
+          { role: "userAdminAnyDatabase", db: "admin" },
+          "readWriteAnyDatabase"
+          ]
   }
 )  
 ```
@@ -35,3 +38,7 @@ mongo -u irfandi
 ```
 
 lalu masukan passwordnya dan warning sudah tidak terlihat.
+
+untuk mengakses mongodb server nya dengan cara
+
+**`mongodb://irfandi:userpwd@localhost:27017/namadb?authSoure=admin`**
